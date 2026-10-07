@@ -1,4 +1,4 @@
-# 📊 E-Commerce Revenue & Performance Analysis
+# 📊 E-Commerce Customer Behavior & Revenue Performance Analysis
 
 An end-to-end business analytics project analyzing customer behavior, website traffic, transaction performance, and revenue trends using **BigQuery SQL, Excel, and Power BI**.
 
