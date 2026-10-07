@@ -2,13 +2,13 @@
 
 An end-to-end business analytics project analyzing customer behavior, website traffic, transaction performance, and revenue trends using **BigQuery SQL, Excel, and Power BI**.
 
-The project focuses on extracting useful business data from large Google Analytics datasets, preparing the data for analysis, and transforming the results into actionable business insights.
+The project demonstrates how raw website analytics data can be extracted, cleaned, analyzed, visualized, and transformed into actionable business insights.
 
 ---
 
 ## 📌 Business Scenario
 
-A retail company wants to better understand its digital performance across:
+A retail company wants to understand its digital performance across:
 
 - Customer behavior
 - Website traffic
@@ -18,30 +18,30 @@ A retail company wants to better understand its digital performance across:
 - Geographic performance
 - Traffic source performance
 
-The company has millions of website records stored in BigQuery and requires analysts to extract, clean, analyze, and visualize the most relevant business data for decision-making.
+The company has millions of website records stored in BigQuery and wants analysts to extract useful business data for reporting and decision-making.
 
 ---
 
 ## 🎯 Project Objectives
 
-The main objectives of this project were to:
+The objectives of this project were to:
 
 - Extract relevant business data from multiple BigQuery tables
 - Combine datasets using SQL
 - Remove duplicate records
 - Clean and prepare the extracted data
-- Analyze customer and revenue patterns using Excel
+- Analyze revenue and customer behavior using Excel
 - Build interactive Power BI dashboards
 - Identify high-performing markets and traffic sources
-- Provide data-driven business recommendations
+- Generate actionable business recommendations
 
 ---
 
 ## 🛠️ Tools & Technologies
 
 - **Google BigQuery** — Data extraction and SQL analysis
-- **SQL** — Data transformation, filtering, aggregation, and preparation
-- **Microsoft Excel** — Exploratory analysis and data preparation
+- **SQL** — Data filtering, transformation, aggregation, and preparation
+- **Microsoft Excel** — Data analysis and exploration
 - **Power BI** — Interactive dashboards and business intelligence
 - **GitHub** — Project documentation and portfolio presentation
 
@@ -49,36 +49,32 @@ The main objectives of this project were to:
 
 ## 🗃️ Dataset
 
-The project uses the **Google Analytics Sample Dataset** available through BigQuery.
+This project uses the **Google Analytics Sample Dataset** available through BigQuery.
 
-The extracted dataset contains key fields including:
+The final dataset contains the following key fields:
 
 | Column | Description |
 |---|---|
 | Visit_Id | Unique visit identifier |
 | Visit_Date | Date of the website visit |
 | Country | Customer country |
-| City | Customer city |
+| Clean_City | Cleaned customer city |
 | Device_Category | Device used by the customer |
 | Browser | Browser used |
 | Traffic_Source | Source of website traffic |
 | PageViews | Number of pages viewed |
 | Transactions | Number of transactions |
 | Revenue | Revenue generated |
-
-Additional analytical fields were created during data preparation, including:
-
-- Revenue Category
-- Conversion Flag
-- Clean City
+| Revenue Category | Revenue classification |
+| Conversion Flag | Customer conversion status |
 
 ---
 
 ## 🔍 SQL Analysis
 
-SQL was used to extract and prepare the data from multiple BigQuery tables.
+SQL was used to extract, combine, filter, and prepare the data for downstream analysis.
 
-Key SQL concepts applied:
+### SQL concepts applied
 
 - `SELECT DISTINCT`
 - `WHERE`
@@ -89,9 +85,16 @@ Key SQL concepts applied:
 - `ORDER BY`
 - `LIMIT`
 
-The analysis combined data from the 2016 and 2017 Google Analytics session tables and filtered the records based on transaction, revenue, device, and traffic-source criteria.
+The analysis combined Google Analytics session data from **2016 and 2017**.
 
-The final exported dataset was limited to **5,000 records** for downstream analysis.
+The data was filtered based on:
+
+- Revenue-generating sessions
+- Transactions greater than zero
+- Mobile users
+- Selected traffic sources
+
+Duplicate records were removed using `SELECT DISTINCT`, and the final extraction was limited to **5,000 rows**.
 
 ---
 
@@ -109,7 +112,7 @@ The cleaned dataset was analyzed in Excel to identify patterns across:
 - Revenue categories
 - Days of the week
 
-The Excel analysis provided the foundation for the Power BI dashboard and helped identify the most important business trends.
+The analysis helped identify the major revenue drivers and business trends used in the Power BI dashboard.
 
 ---
 
@@ -126,7 +129,7 @@ Key metrics:
 - **Total Pageviews:** 21K
 - **Total Visits:** 825
 
-Visualizations include:
+Key visualizations:
 
 - Revenue Category
 - Revenue by Country
@@ -137,7 +140,7 @@ Visualizations include:
 
 ### Dashboard 2 — Traffic & Customer Performance
 
-Visualizations include:
+Key visualizations:
 
 - Revenue by Traffic Source
 - Revenue Trend
@@ -151,11 +154,11 @@ Visualizations include:
 
 ### Executive & Geographic Overview
 
-![Executive & Geographic Overview Dashboard](images/executive-dashboard.png)
+![Executive & Geographic Overview Dashboard](executive-dashboard.png)
 
 ### Traffic & Customer Performance
 
-![Traffic & Customer Performance Dashboard](images/traffic-customer-dashboard.png)
+![Traffic & Customer Performance Dashboard](traffic-customer-dashboard.png)
 
 ---
 
@@ -210,4 +213,4 @@ Power BI Dashboard
    ↓
 Business Insights
    ↓
-Recommendations
+Business Recommendations
