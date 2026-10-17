@@ -1,216 +1,115 @@
-# 📊 E-Commerce Customer Behavior & Revenue Performance Analysis
+# E-Commerce Customer Behavior and Revenue Performance Analysis
 
-An end-to-end business analytics project analyzing customer behavior, website traffic, transaction performance, and revenue trends using **BigQuery SQL, Excel, and Power BI**.
+## Project Overview
 
-The project demonstrates how raw website analytics data can be extracted, cleaned, analyzed, visualized, and transformed into actionable business insights.
+This end-to-end business analytics project examines website traffic, customer behavior, transaction performance, and revenue trends using Google BigQuery, SQL, Microsoft Excel, and Power BI.
 
----
+The project demonstrates a structured analytical workflow, from extracting and preparing data to exploring business performance, visualizing findings, and developing recommendations to support data-informed decision-making.
 
-## 📌 Business Scenario
+## Business Scenario
 
-A retail company wants to understand its digital performance across:
+A retail business wants to better understand its digital performance across customer behavior, website traffic, transaction activity, and revenue generation.
 
-- Customer behavior
-- Website traffic
-- Revenue trends
-- Transaction performance
-- Browser usage
-- Geographic performance
-- Traffic source performance
+With website analytics data stored in BigQuery, the objective is to extract relevant information, identify meaningful patterns, and present the findings in a format that supports business reporting and decision-making.
 
-The company has millions of website records stored in BigQuery and wants analysts to extract useful business data for reporting and decision-making.
+## Project Objectives
 
----
+- Extract relevant data from multiple BigQuery tables.
+- Combine datasets using SQL.
+- Prepare and clean data for analysis.
+- Explore revenue, transactions, pageviews, and traffic sources.
+- Compare performance across countries, cities, browsers, and days of the week.
+- Develop interactive Power BI dashboards.
+- Identify key business patterns and potential growth opportunities.
+- Translate analytical findings into practical recommendations.
 
-## 🎯 Project Objectives
+## Tools and Technologies
 
-The objectives of this project were to:
+- **Google BigQuery:** Data extraction and querying.
+- **SQL:** Filtering, combining, aggregating, and preparing data.
+- **Microsoft Excel:** Data exploration and analysis.
+- **Power BI:** Interactive dashboards and business intelligence.
+- **GitHub:** Project documentation and portfolio presentation.
 
-- Extract relevant business data from multiple BigQuery tables
-- Combine datasets using SQL
-- Remove duplicate records
-- Clean and prepare the extracted data
-- Analyze revenue and customer behavior using Excel
-- Build interactive Power BI dashboards
-- Identify high-performing markets and traffic sources
-- Generate actionable business recommendations
+## Dataset
 
----
+The project uses the Google Analytics Sample Ecommerce Dataset available through BigQuery.
 
-## 🛠️ Tools & Technologies
+The analysis uses fields representing website sessions, dates, geographic locations, devices, browsers, traffic sources, pageviews, transactions, and revenue.
 
-- **Google BigQuery** — Data extraction and SQL analysis
-- **SQL** — Data filtering, transformation, aggregation, and preparation
-- **Microsoft Excel** — Data analysis and exploration
-- **Power BI** — Interactive dashboards and business intelligence
-- **GitHub** — Project documentation and portfolio presentation
-
----
-
-## 🗃️ Dataset
-
-This project uses the **Google Analytics Sample Dataset** available through BigQuery.
-
-The final dataset contains the following key fields:
+### Key Fields
 
 | Column | Description |
 |---|---|
-| Visit_Id | Unique visit identifier |
-| Visit_Date | Date of the website visit |
-| Country | Customer country |
-| Clean_City | Cleaned customer city |
-| Device_Category | Device used by the customer |
-| Browser | Browser used |
-| Traffic_Source | Source of website traffic |
-| PageViews | Number of pages viewed |
-| Transactions | Number of transactions |
-| Revenue | Revenue generated |
-| Revenue Category | Revenue classification |
-| Conversion Flag | Customer conversion status |
+| `Visit_Id` | Website visit identifier |
+| `Visit_Date` | Date of the website visit |
+| `Country` | Country associated with the visit |
+| `Clean_City` | Standardized city value |
+| `Device_Category` | Device category |
+| `Browser` | Browser used |
+| `Traffic_Source` | Source of website traffic |
+| `PageViews` | Number of pages viewed |
+| `Transactions` | Transaction count |
+| `Revenue` | Revenue recorded |
+| `Revenue Category` | Revenue classification |
+| `Conversion Flag` | Indicator of conversion status |
 
----
+## SQL Analysis
 
-## 🔍 SQL Analysis
+SQL was used to extract, filter, combine, and prepare data for further analysis.
 
-SQL was used to extract, combine, filter, and prepare the data for downstream analysis.
-
-### SQL concepts applied
+### SQL Concepts Applied
 
 - `SELECT DISTINCT`
 - `WHERE`
 - `UNION ALL`
 - `GROUP BY`
-- Aggregate functions such as `SUM()`
+- Aggregate functions, including `SUM()`
 - `CASE WHEN`
 - `ORDER BY`
 - `LIMIT`
 
-The analysis combined Google Analytics session data from **2016 and 2017**.
+### Data Extraction and Filtering
 
-The data was filtered based on:
+The analysis combined Google Analytics session data from 2016 and 2017.
 
-- Revenue-generating sessions
-- Transactions greater than zero
-- Mobile users
-- Selected traffic sources
+The extraction included filtering conditions related to revenue-generating sessions, transactions greater than zero, mobile users, and selected traffic sources.
 
-Duplicate records were removed using `SELECT DISTINCT`, and the final extraction was limited to **5,000 rows**.
+`SELECT DISTINCT` was used to return distinct rows, and the final extraction was limited to 5,000 rows.
 
----
+**Important:** `SELECT DISTINCT` removes duplicate result rows; it does not necessarily guarantee that each visit identifier appears only once. The extraction limit also means the results represent the selected dataset rather than necessarily the entire source dataset.
 
-## 📈 Excel Analysis
+## Excel Analysis
 
-The cleaned dataset was analyzed in Excel to identify patterns across:
+The extracted dataset was explored in Microsoft Excel to examine patterns across:
 
-- Revenue
-- Transactions
-- Pageviews
-- Traffic sources
-- Browsers
-- Countries
-- Cities
+- Revenue and transactions
+- Pageviews and traffic sources
+- Browsers and geographic locations
 - Revenue categories
 - Days of the week
 
-The analysis helped identify the major revenue drivers and business trends used in the Power BI dashboard.
+The analysis helped identify patterns and prepare findings for presentation in the Power BI dashboards.
 
----
+## Power BI Dashboard
 
-## 📊 Power BI Dashboard
+The Power BI report presents an interactive view of ecommerce revenue, website activity, and traffic performance.
 
-The Power BI dashboard provides an interactive view of e-commerce revenue and customer performance.
+### Dashboard 1: Executive and Geographic Overview
 
-### Dashboard 1 — Executive & Geographic Overview
+**Key performance indicators**
 
-Key metrics:
+| Metric | Result |
+|---|---:|
+| Total Revenue | $48.02K |
+| Total Transactions | 834 |
+| Total Pageviews | 21K |
+| Total Visits | 825 |
 
-- **Total Revenue:** $48.02K
-- **Total Transactions:** 834
-- **Total Pageviews:** 21K
-- **Total Visits:** 825
+**Key visualizations**
 
-Key visualizations:
-
-- Revenue Category
-- Revenue by Country
-- Revenue by Day of Week
-- Geographic Revenue Distribution
-- Key Business Insights
-- Business Recommendations
-
-### Dashboard 2 — Traffic & Customer Performance
-
-Key visualizations:
-
-- Revenue by Traffic Source
-- Revenue Trend
-- Revenue by Browser
-- Revenue by City
-- Interactive filters for date, country, browser, traffic source, and revenue category
-
----
-
-## 🖼️ Dashboard Preview
-
-### Executive & Geographic Overview
-
-![Executive & Geographic Overview Dashboard](executive-dashboard.png)
-
-### Traffic & Customer Performance
-
-![Traffic & Customer Performance Dashboard](traffic-customer-dashboard.png)
-
----
-
-## 💡 Key Insights
-
-### 1. Strong North American Performance
-
-North America generated the highest revenue, making it the strongest-performing market.
-
-### 2. Direct Traffic Led Revenue Generation
-
-Direct traffic was the leading source of revenue, outperforming Google and YouTube.
-
-### 3. Chrome and Safari Dominated
-
-Chrome and Safari were the most frequently used browsers among revenue-generating visits.
-
-### 4. Medium and High Revenue Segments Dominated
-
-Medium and High revenue segments accounted for most of the total revenue, while the Low segment contributed the least.
-
-### 5. Wednesday Recorded the Highest Revenue
-
-Revenue varied throughout the week, with Wednesday recording the highest revenue.
-
----
-
-## 💼 Business Recommendations
-
-Based on the analysis, the following recommendations were developed:
-
-- Increase investment in **Direct and Google marketing channels** to maintain and grow high-performing traffic sources.
-- Optimize the website experience for **Chrome and Safari** users to improve usability and conversion performance.
-- Expand marketing efforts in high-performing regions, particularly the **United States**, while exploring growth opportunities in other markets.
-- Launch targeted promotions during **high-performing days** to maximize revenue and customer engagement.
-- Continue monitoring customer and revenue behavior through interactive dashboards to support **data-driven decision-making** and identify emerging trends.
-
----
-
-## 🔄 Analytics Workflow
-
-```text
-BigQuery
-   ↓
-SQL Data Extraction
-   ↓
-Data Cleaning & Transformation
-   ↓
-Excel Analysis
-   ↓
-Power BI Dashboard
-   ↓
-Business Insights
-   ↓
-Business Recommendations
+- Revenue by category
+- Revenue by country
+- Revenue by day of the week
+- Geographic revenue distribution
+- Business
